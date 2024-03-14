@@ -12,6 +12,8 @@ import {CopyToClipboard} from 'react-copy-to-clipboard'
 import {MdContentCopy} from 'react-icons/md'
 import PostList from "@/components/posts/PostList";
 import PostComments from '@/components/posts/postComments/index'
+import Layout from "@/containers/Layout";
+import SEO from "@/common/SEO";
 const PostPage = ({post}) => {
   const [copied, setCopied] = useState(false);
 
@@ -22,7 +24,11 @@ const PostPage = ({post}) => {
     }, 1000);
   };
 
-    return (       <div>
+    return (    
+      <>
+      <SEO post={post} />
+      <Layout>
+         <div>
         <div className="md:max-w-screen-lg container mx-auto">
           <header className="flex flex-col md:flex-row gap-y-5 md:justify-between md:items-start mb-12 mx-auto max-w-screen-md">
             {/* author data */}
@@ -175,7 +181,9 @@ const PostPage = ({post}) => {
           </section>
           <PostComments post={post} />
           </div>
-      </div>);
+      </div>
+      </Layout>
+      </>);
 }
  
 export default PostPage;

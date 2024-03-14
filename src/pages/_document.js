@@ -1,3 +1,4 @@
+import Layout from "@/containers/Layout";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -5,8 +6,10 @@ export default function Document() {
     <Html dir="rtl" lang="fa">
       <Head />
       <body>
+       
         <Main />
         <NextScript />
+    
       </body>
     </Html>
   );

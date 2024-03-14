@@ -2,13 +2,15 @@ import { CategoryDesktop } from "@/components/posts/CategoryDesktop";
 import CategoryMobile from "@/components/posts/CategoryMobile";
 import PostList from "@/components/posts/PostList";
 import { SortBar } from "@/components/posts/SortBar";
+import Layout from "@/containers/Layout";
 import axios from "axios";
 import queryString from "query-string"
 
 
 const CategorySlug = ({blogsData,category}) => {
   return (
-
+    <Layout>
+      
    <div className="bg-gray-50">
     <div className="container mx-auto lg:max-w-screen-xl px-4 md:px-0">
     <CategoryMobile category={category} />
@@ -25,6 +27,7 @@ const CategorySlug = ({blogsData,category}) => {
       </div>
     </div>
    </div>
+   </Layout>
   );
 };
 

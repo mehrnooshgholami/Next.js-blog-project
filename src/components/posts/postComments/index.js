@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import SignleComment from "./SignleComment";
+import SingleComment from "./SingleComment";
+import ReplyComment from "./ReplyComment";
 const PostComment = ({post}) => {
     return ( 
         <div>
@@ -9,7 +10,8 @@ const PostComment = ({post}) => {
             !comment.responseTo &&
             comment.status === 2 && (
               <Fragment key={comment._id}>
-                <SignleComment comment={comment} postId={post._id} />
+                <SingleComment comment={comment} />
+                <ReplyComment comments={post.comments} ParentCommentId={comment._id} />
               </Fragment>
             )
           );
@@ -32,7 +34,7 @@ const PostComment = ({post}) => {
             >
                 ارسال نظر
             </button>
-        </form>
+          </form>
         </div>
       </div>
      );

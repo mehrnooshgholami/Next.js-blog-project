@@ -1,6 +1,7 @@
 import {AnnotationIcon, BookmarkIcon, ChevronDownIcon,ClockIcon, HeartIcon} from "@heroicons/react/outline"
 import Link from "next/link";
 import PostIntraction from "./postintraction";
+import SEO from "@/common/SEO";
 const PostList = ({data}) => {
     return ( 
         <>
